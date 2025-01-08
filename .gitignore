@@ -1,7 +1,7 @@
 # ignore the GROQ_API_KEY
 app/.env
 
-# ignore the .DS_Store file, vectorstore folder, and app/__pycache__ folder
+# ignore the .DS_Store file, and app/__pycache__ folder
 .DS_Store
 app/__pycache__/
 .idea/

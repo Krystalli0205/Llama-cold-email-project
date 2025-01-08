@@ -25,10 +25,10 @@ When a business development manager inputs a job posting URL -> streamlit fronte
 
 ## 💻 Tech Stack
 
-- **Backend Storage**: ChromaDB (because it's a lightweight vector database)
-- **Frontend**: Streamlit (because it's a Python library for building simple web apps)
-- **LLM Model**: Llama 3.1 via groq.cloud (using Groq API key for faster inference)
+- **Data Storage**: ChromaDB (a lightweight vector database)
+- **LLM Model**: Llama 3.1 (using Groq API key for faster inference)
 - **Framework**: LangChain
+- **Frontend**: Streamlit (a Python library for building simple web apps)
 - **Language**: Python
 
 ## 🎥 Demo
@@ -79,10 +79,10 @@ You can watch the video demo: [youtube](https://youtu.be/KS0ShCQTc04)
 
 #### 4.2 App Development
 Move the code from the notebook into the app folder and create a streamlit app
-- **Utils** (`app/utils.py`): Implemented text cleaning functions to process raw job postings
-- **Database** (`app/portfolio.py`): Built ChromaDB integration for portfolio storage and matching
-- **LLM Backend** (`app/chains.py`): Integrated Llama 3.1 API with job extraction and email generation
-- **UI** (`app/main.py`): Created Streamlit interface for URL input and sequential backend processing
+- **Utils** ([utils.py](app/utils.py)): Implemented text cleaning functions to process raw job postings
+- **Database** ([portfolio.py](app/portfolio.py)): Built ChromaDB integration for portfolio storage and matching
+- **LLM Backend** ([chains.py](app/chains.py)): Integrated Llama 3.1 API with job extraction and email generation
+- **UI** ([main.py](app/main.py)): Created Streamlit interface for URL input and sequential backend processing
 
 ## 🚀 Future Improvements
 
@@ -91,7 +91,7 @@ Move the code from the notebook into the app folder and create a streamlit app
 Develop an automated scraping system that can automatically extract relevant job postings based on predefined criteria and generate emails for all matching positions.
 
 ### 2. **More Sophisticated Skill Extraction**: 
--The current skill extraction is not very good. when the skillsets are not that clearly listed on the job posting, the AI will not be able to extract and parse the skills.
+- The current skill extraction is not very good. when the skillsets are not that clearly listed on the job posting, the AI will not be able to extract and parse the skills.
 - Implement a more sophisticated skill extraction system that can extract and parse skills from job postings, even if they are not clearly listed.
 
 ### 3. **Enhanced Matching Algorithm**: 

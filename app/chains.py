@@ -8,9 +8,11 @@ from dotenv import load_dotenv
 load_dotenv()
 
 class Chain:
+    # the following code will create the chain, portfolio, and set the page config
     def __init__(self):
         self.llm = ChatGroq(temperature=0, groq_api_key=os.getenv("GROQ_API_KEY"), model_name="llama3-8b-8192")
 
+    # the following code will extract the jobs from the website
     def extract_jobs(self, cleaned_text):
         prompt_extract = PromptTemplate.from_template(
             """
@@ -34,6 +36,7 @@ class Chain:
             raise OutputParserException("Context too big. Unable to parse jobs.")
         return res if isinstance(res, list) else [res]
 
+    # the following code will write the email
     def write_mail(self, job, links):
         prompt_email = PromptTemplate.from_template(
             """

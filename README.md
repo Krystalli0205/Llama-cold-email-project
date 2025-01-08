@@ -1,10 +1,8 @@
 # 🤖 Llama Cold Email Generator 
 
-An AI-powered tool that automates personalized cold email generation for HR firms, matching contractor portfolios with tech job postings.
-
 ## 📊 Project Overview
 
-This project helps HR outsourcing firms efficiently match their tech contractors with job openings at large companies in the US, to the tech firms hire engineers from lower cost countries. 
+This project helps HR outsourcing firms efficiently match their tech contractors with job openings at large companies in the US, to help the tech firms hire engineers with lower costs.
 
 Using Llama 3.1 and LangChain, it automatically extracts job requirements from company career pages, matches them with HR outsourcing firms contractor portfolios, and generates personalized cold emails highlighting relevant skills, portfolio links, and cost advantages.
 
@@ -23,7 +21,7 @@ Using Llama 3.1 and LangChain, it automatically extracts job requirements from c
 ### Overall Workflow
 When a business development manager inputs a job posting URL -> streamlit frontend -> LangChain backend -> Llama 3.1 -> ChromaDB -> Generate a tailored cold email and display it on the frontend
 
-[architecture diagram](architecture.png)
+![architecture diagram](demo/architecture.png)
 
 ## 💻 Tech Stack
 
@@ -35,7 +33,7 @@ When a business development manager inputs a job posting URL -> streamlit fronte
 
 ## 🎥 Demo
 
-[demo](demo/demo.gif)
+![demo](demo/demo.gif)
 
 You can watch the video demo: [youtube](https://youtu.be/KS0ShCQTc04)
 
@@ -56,7 +54,7 @@ You can watch the video demo: [youtube](https://youtu.be/KS0ShCQTc04)
 - Streamlines outreach process
 
 ### 4. Development Process
-#### Notebook Testing ([experiments/](experiments/))
+#### 4.1 Notebook Testing ([experiments](experiments/))
 ##### Step 1: LLM Integration Testing ([email_generator.ipynb](experiments/email_generator.ipynb))
 - **Install necessary libraries**: Installed LangChain and LangChain-Groq libraries
 - **Test Llama 3.1 API integration**:  Called the Llama 3.1 API, test it with a few queries to see if the response makes sense
@@ -79,7 +77,7 @@ You can watch the video demo: [youtube](https://youtu.be/KS0ShCQTc04)
 - **Created Email Instructions**: Developed email templates using PromptTemplate. Incorporated the writer's identity, firm's value proposition,  job requirements and matched portfolio links
 - **Iteratively Refined Prompts**: Iteratively refined prompts for optimal output
 
-#### App Development
+#### 4.2 App Development
 Move the code from the notebook into the app folder and create a streamlit app
 - **Utils** (`app/utils.py`): Implemented text cleaning functions to process raw job postings
 - **Database** (`app/portfolio.py`): Built ChromaDB integration for portfolio storage and matching
@@ -88,11 +86,19 @@ Move the code from the notebook into the app folder and create a streamlit app
 
 ## 🚀 Future Improvements
 
-### 1. **Automated Job Posting Scraping**: The app currently requires manual URL input for each job posting, making it time-consuming for HR firms to process multiple positions. Develop an automated scraping system that can automatically extract relevant job postings based on predefined criteria and generate emails for all matching positions.
+### 1. **Automated Job Posting Scraping**: 
+- The app currently requires manual URL input for each job posting, making it time-consuming for HR firms to process multiple positions. 
+Develop an automated scraping system that can automatically extract relevant job postings based on predefined criteria and generate emails for all matching positions.
 
-### 2. **More Sophisticated Skill Extraction**: The current skill extraction is not very good. when the skillsets are not that clearly listed on the job posting, the AI will not be able to extract and parse the skills.
+### 2. **More Sophisticated Skill Extraction**: 
+-The current skill extraction is not very good. when the skillsets are not that clearly listed on the job posting, the AI will not be able to extract and parse the skills.
+- Implement a more sophisticated skill extraction system that can extract and parse skills from job postings, even if they are not clearly listed.
 
-### 3. **Enhanced Matching Algorithm**: The current matching system uses basic vector similarity search, which might miss nuanced skill relationships or experience levels. Implement a more sophisticated matching system that uses skill taxonomy to understand related technologies and considers experience levels and skill hierarchies.
+### 3. **Enhanced Matching Algorithm**: 
+- The current matching system uses basic vector similarity search, which might miss nuanced skill relationships or experience levels. 
+- Implement a more sophisticated matching system that uses skill taxonomy to understand related technologies and considers experience levels and skill hierarchies.
 
-### 4. **Multi-language Support**: The system currently only processes English job postings and generates English emails. Expand the system to process job postings and generate emails in multiple languages.
+### 4. **Multi-language Support**: 
+- The system currently only processes English job postings and generates English emails. 
+- Expand the system to process job postings and generate emails in multiple languages.
 
